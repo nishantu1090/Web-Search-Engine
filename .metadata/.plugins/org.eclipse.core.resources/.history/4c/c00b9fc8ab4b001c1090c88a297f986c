@@ -1,0 +1,24 @@
+package webEngine;
+
+public class ReferenceCount {
+	private String Reference;
+	private int Count;
+	
+	ReferenceCount(String ref, int count){
+		
+		this.Reference = ref;
+		this.Count = count;
+	}
+	
+	public String getReferenceName() {
+		return this.Reference; 
+	}
+	
+	public void setReferenceCount(int count) {
+		this.Count = count;
+	}
+	
+	public int getReferenceCount() {
+		return this.Count;
+	}
+}

@@ -1,0 +1,81 @@
+import textprocessing.In;
+
+import java.io.File;
+import java.util.*;
+import java.util.List;
+import java.util.regex.*;
+public class Solution04 {
+
+	public static List<String> emailAddresses;
+	public static List<String> phoneNumbers;
+	
+	static {
+		emailAddresses = new ArrayList<String>();
+		phoneNumbers = new ArrayList<String>();
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		File folder = new File("/Users/nishant-mac/Classes/ACC/Assignments/Assignment-4/Resources/Text-Files/");
+		File[] listOfFiles = folder.listFiles();
+		
+		for(int i =0; i < listOfFiles.length; i++) {
+			findEmailAddresses(listOfFiles[i].getName());
+			findPhoneNumbers(listOfFiles[i].getName());
+		}
+		//printFoundEmailAddresses();
+		printFoundPhoneNumbers();
+	}
+	
+	public static void findEmailAddresses(String fileName) {
+		In in = new In("/Users/nishant-mac/Classes/ACC/Assignments/Assignment-4/Resources/Text-Files/" + fileName);
+		String text = in.readAll();
+		
+		
+	      Matcher m = Pattern.compile("[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+").matcher(text);
+	      
+	      while (m.find()) 
+	      {
+	          //System.out.println(m.group());
+	          emailAddresses.add(m.group());
+	      }
+	}
+	
+	public static void findPhoneNumbers(String fileName) {
+		In in = new In("/Users/nishant-mac/Classes/ACC/Assignments/Assignment-4/Resources/Text-Files/" + fileName);
+		String text = in.readAll();
+		
+		
+		
+		/*String patterns 
+	      = "(\\+\\d{1,3}( )?)?((\\(\\d{3}\\))|\\d{3})[- .]?\\d{3}[- .]?\\d{4}$" 
+	      + "|(\\+\\d{1,3}( )?)?(\\d{3}[ ]?){2}\\d{3}$" 
+	      + "|(\\+\\d{1,3}( )?)?(\\d{3}[ ]?)(\\d{2}[ ]?){2}\\d{2}$";*/
+		String regex = "(\\()?(\\d){3}(\\))?[- ](\\d){3}-(\\d){4}";
+		
+		Pattern pattern = Pattern.compile(regex);
+		
+		Matcher m = pattern.matcher(text);
+			
+		while(m.find()) {
+			phoneNumbers.add(m.group());
+		}
+		
+		
+	}
+	
+	public static void printFoundEmailAddresses() {
+		
+		for(var email : emailAddresses) {
+			System.out.println(email);
+		}
+	}
+	
+	public static void printFoundPhoneNumbers() {
+		for(var phoneNumber : phoneNumbers) {
+			System.out.println(phoneNumber);
+		}
+	}
+
+}

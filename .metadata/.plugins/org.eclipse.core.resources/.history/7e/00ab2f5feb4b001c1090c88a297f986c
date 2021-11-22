@@ -1,0 +1,170 @@
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.*;
+import java.util.regex.*;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.safety.Safelist;
+import org.jsoup.select.Elements;
+
+public class Solution05 {
+	
+	public static List<String> urlsWithDomain_W3_org;
+	public static List<String> urlsWithFolders;
+	public static List<String> urlsWithReferences;
+	public static List<String> urlsWithSpecificDomains;
+	
+	static {
+		urlsWithDomain_W3_org = new ArrayList<String>();
+		urlsWithFolders = new ArrayList<String>();
+		urlsWithReferences = new ArrayList<String>();
+		urlsWithSpecificDomains = new ArrayList<String>();
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		File folder = new File("/Users/nishant-mac/Classes/ACC/Assignments/Assignment-4/Resources/W3C Web Pages/");
+		File[] listOfFiles = folder.listFiles();
+
+		
+		for(int i = 0 ; i < listOfFiles.length; i++) {
+			filterUrlsWithDomin_w3_org(listOfFiles[i].getName());
+			filterUrlsWithFolders(listOfFiles[i].getName());
+			filterUrlsWithReferences(listOfFiles[i].getName());
+			filterUrlsWithTheGivenDomains(listOfFiles[i].getName());
+		}
+		//printAllUrlsWithDomain_w3_org();
+		
+		//printAllUrsWithFolders();
+		//printUrlsWithReferences();
+		printUrlsWithSpecificDomains();
+	}
+		
+	public static void filterUrlsWithDomin_w3_org(String fileName) {
+		
+		File input = new File("/Users/nishant-mac/Classes/ACC/Assignments/Assignment-4/Resources/W3C Web Pages/" + fileName);
+		try {
+			Document doc = Jsoup.parse(input, "UTF-8");
+			Elements links = doc.select("a[href]");
+			
+			
+			for (Element link : links) {
+		        //System.out.println(link.attr("abs:href"));
+		        
+				String regex = "(http:\\/\\/)(?!-)[A-Za-z0-9-]{1,63}(?<!-)(.w3.org)[a-z\\/#]*$";
+				Pattern p = Pattern.compile(regex);
+				Matcher m = p.matcher(link.attr("abs:href"));
+				while(m.find()) {
+					urlsWithDomain_W3_org.add(m.group());
+				}
+			}
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	public static void filterUrlsWithFolders(String fileName) {
+		
+		File input = new File("/Users/nishant-mac/Classes/ACC/Assignments/Assignment-4/Resources/W3C Web Pages/" + fileName);
+		try {
+			Document doc = Jsoup.parse(input, "UTF-8");
+			Elements links = doc.select("a[href]");
+			
+			
+			for (Element link : links) {
+		        //System.out.println(link.attr("abs:href"));
+		        
+				String regex = "^(http:\\/\\/)[A-Za-z0-9]{1,3}\\.[a-zA-Z0-9]{1,63}\\.([a-zA-Z.]{1,3})+(\\/){1}[a-zA-Z\\/]{1,63}+$";
+				Pattern p = Pattern.compile(regex);
+				Matcher m = p.matcher(link.attr("abs:href"));
+				while(m.find()) {
+					urlsWithFolders.add(m.group());
+				}
+			}
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public static void filterUrlsWithReferences(String fileName) {
+
+		File input = new File("/Users/nishant-mac/Classes/ACC/Assignments/Assignment-4/Resources/W3C Web Pages/" + fileName);
+		try {
+			Document doc = Jsoup.parse(input, "UTF-8");
+			Elements links = doc.select("a[href]");
+			
+			
+			for (Element link : links) {
+		        //System.out.println(link.attr("abs:href"));
+		        
+				String regex = "^(http:\\/\\/)[A-Za-z0-9]{1,3}\\.[a-zA-Z0-9]{1,63}\\.([a-zA-Z.]{2,3})+(\\/){1}[a-zA-Z\\/]{0,63}[\\#]{1}[a-zA-Z0-9]*$";
+				Pattern p = Pattern.compile(regex);
+				Matcher m = p.matcher(link.attr("abs:href"));
+				while(m.find()) {
+					urlsWithReferences.add(m.group());
+				}
+			}
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public static void filterUrlsWithTheGivenDomains(String fileName) {
+		File input = new File("/Users/nishant-mac/Classes/ACC/Assignments/Assignment-4/Resources/W3C Web Pages/" + fileName);
+		try {
+			Document doc = Jsoup.parse(input, "UTF-8");
+			Elements links = doc.select("a[href]");
+			
+			
+			for (Element link : links) {
+		        //System.out.println(link.attr("abs:href"));
+		        
+				String regex = "(http:\\/\\/)(?!-)[A-Za-z0-9-]{1,63}(?<!-)\\.([a-zA-Z0-9]{1,63})((.net){0,1}(.org){0,1}(.com){0,1})+[a-z\\/#]*$";
+				Pattern p = Pattern.compile(regex);
+				Matcher m = p.matcher(link.attr("abs:href"));
+				while(m.find()) {
+					urlsWithSpecificDomains.add(m.group());
+				}
+			}
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	public static void printAllUrlsWithDomain_w3_org() {
+		
+		for(var url : urlsWithDomain_W3_org) {
+			System.out.println(url);
+		}
+	}
+	
+	public static void printAllUrsWithFolders() {
+		for(var url : urlsWithFolders) {
+			System.out.println(url);
+		}
+	}
+	
+	public static void printUrlsWithReferences() {
+		for(var url: urlsWithReferences)
+			System.out.println(url);
+	}
+	
+	public static void printUrlsWithSpecificDomains() {
+		for(var url: urlsWithSpecificDomains)
+			System.out.println(url);
+	}
+	
+}
