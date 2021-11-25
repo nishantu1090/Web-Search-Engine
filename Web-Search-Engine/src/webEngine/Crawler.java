@@ -16,47 +16,49 @@ public class Crawler {
 	public static void startCrawling(String url, int depth) {
 		Pattern patternObject = Pattern.compile(regex);
 		if(depth < maxDepth) {
-			System.out.println(depth);
-			//System.out.println(url);
+			
 			try {
 				if(isValidUrl(url)) {
 					Document doc = Jsoup.connect(url).get();
 					urls.add(url);
-					//System.out.println(url);
+					
 					Elements linksInWebPage = doc.select("a[href]");
 					
 					for(Element link : linksInWebPage) {
-						//System.out.println(link.attr("abs:href"));
+						
 						if (isValidUrl(link.attr("abs:href")) && patternObject.matcher(link.attr("href")).find()) {
-							//System.out.println(link.attr("abs:href"));
+							
 							if(!isSameDomain(link.attr("abs:href"), url))
 								startCrawling(link.attr("abs:href"), ++depth);
 							else
 								continue;
 						}
 					}
-					
-							
-							 
 				}
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				
 			}
 		}
+		
 		return;
 	}
 	
 	
 	public static Set<String> getUrls() {
-		/*for(String url : urls) {
-			System.out.println(url);
-		}*/
+		
 		return urls;
 	}
 	
+	public static void parseURLS() {
+		
+		for(var url : getUrls()) {
+			HTMLParser.readURL(url);
+		}
+		return;
+	}
 	private static boolean isSameDomain(String url, String domainlUrl) {
-		//System.out.println(url);
+		
 		String domainOfNewUrl = url.split("//")[1];
 		String domainOfDomainUrl = domainlUrl.split("//")[1];
 		domainOfNewUrl = domainOfNewUrl.split("/")[0];
@@ -87,11 +89,13 @@ public class Crawler {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		startCrawling("http://www.javatpoint.com", 0);
-		getUrls();
+		//getUrls();
 		
-		for(var url : getUrls()) {
+		/*for(var url : getUrls()) {
 			HTMLParser.readURL(url);
-		}
+		}*/
+		
+		parseURLS();
 
 	}
 

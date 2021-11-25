@@ -24,9 +24,12 @@ public class TrieInitializer {
 		for(int i = 0; i < listOfFiles.length; i++) {
 			
 			String fileName = listOfFiles[i].getName();
-			System.out.println(fileName);
+			//System.out.println(fileName);
+			
 			
 			String[] words = getWordsInFile(fileName);
+			
+			fileName = fileName.replace("_", "/");
 			
 			for(var word : words) {
 				
@@ -99,16 +102,35 @@ public class TrieInitializer {
 		return st.get(key);
 	}
 	
+	public static void GetRankedURLs(String key) {
+		ArrayList<ReferenceCount> refs = TrieInitializer.getReferences(key);
+		
+		if(refs != null) {
+			Collections.sort(refs);
+		}
+		System.out.println("######################Search Results#####################");
+		if(refs != null && refs.size() > 0) {
+			for(var item : refs) {
+				System.out.println(item.getReferenceName());
+			}
+		}
+		else
+			System.out.println("Sorry! The search word is not found!");
+		
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		TrieInitializer.createTrie();
-		ArrayList<ReferenceCount> refs = TrieInitializer.getReferences("Java");
+		//ArrayList<ReferenceCount> refs = TrieInitializer.getReferences("Java");
 		
-		Collections.sort(refs);
+		/*Collections.sort(refs);
 		System.out.println("Found the word in the following files");
 		for(var item : refs) {
 			System.out.println(item.getReferenceName() + " " + item.Count);
-		}
+		}*/
+		
+		TrieInitializer.GetRankedURLs("Java");
 		
 		
 		

@@ -9,7 +9,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class HTMLParser {
-	
+	private static String DirectoryPath = "/Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/ParsedTextFile";
 	public static void readURL(String url) {
 		String text= "";
 		try {
@@ -21,9 +21,10 @@ public class HTMLParser {
 		    }
 		      
 		    writeTextFile(url, text);
+		    return;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			
 		}
 	}
 	
@@ -33,7 +34,7 @@ public class HTMLParser {
 		
         try {
         	BufferedWriter  writer = null;
-        	writer = new BufferedWriter( new FileWriter("/Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/ParsedTextFile/"+fileName));
+        	writer = new BufferedWriter( new FileWriter(DirectoryPath + "/"+fileName));
 			writer.write(text);
 			writer.close();
 		} catch (IOException e) {

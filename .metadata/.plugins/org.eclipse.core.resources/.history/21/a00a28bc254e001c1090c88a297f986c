@@ -1,0 +1,28 @@
+package webEngine;
+import java.util.*;
+public class SearchEngine {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		boolean shouldExit = false;
+		System.out.println("######################################################################");
+		System.out.println("###############                                #######################");
+		System.out.println("###############  Welcome to our Search Engine  #######################");
+		System.out.println("###############                                #######################");
+		System.out.println("######################################################################");
+		do {
+			System.out.println("Enter your choice:\n 1. Enter the word to search \n 2. Exit");
+			int ch = sc.nextInt();
+			
+			switch(ch){
+				case 1: System.out.println("Searching....");
+					break;
+				case 2: shouldExit = true;
+					break;
+			}
+			
+		}while(shouldExit == false);
+	}
+
+}
