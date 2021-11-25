@@ -36,7 +36,7 @@ public class TrieInitializer {
 						newRef.add(new ReferenceCount(fileName, 1));
 						st.put(word, newRef);
 					}
-					else {
+					else {//increasing the reference count
 						ArrayList<ReferenceCount> refs = st.get(word);
 						int isFound = 0;
 						for(int k = 0; k < refs.size(); k++) {

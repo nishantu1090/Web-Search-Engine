@@ -1920,3 +1920,182 @@ org.eclipse.core.runtime.CoreException: Launch configuration TST references non-
 	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1374)
 	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:84)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2021-11-23 07:29:28,970 [JGit-FileStoreAttributeWriter-2] ERROR org.eclipse.jgit.util.FS - Cannot save config file 'FileBasedConfig[/Users/nishant-mac/.config/jgit/config]'
+java.io.IOException: Creating directories for /Users/nishant-mac/.config/jgit failed
+	at org.eclipse.jgit.util.FileUtils.mkdirs(FileUtils.java:412)
+	at org.eclipse.jgit.internal.storage.file.LockFile.lock(LockFile.java:130)
+	at org.eclipse.jgit.storage.file.FileBasedConfig.save(FileBasedConfig.java:219)
+	at org.eclipse.jgit.util.FS$FileStoreAttributes.saveToConfig(FS.java:740)
+	at org.eclipse.jgit.util.FS$FileStoreAttributes.lambda$4(FS.java:426)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+2021-11-23 09:41:10,817 [Worker-176: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 09:41:10,822 [Worker-176: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 09:41:10,823 [Worker-176: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 09:41:10,823 [Worker-176: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 09:41:32,482 [Worker-180: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 09:41:32,486 [Worker-180: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 09:41:32,488 [Worker-180: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 09:41:32,489 [Worker-180: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 09:41:39,172 [Worker-179: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 09:41:39,175 [Worker-179: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 09:41:39,179 [Worker-179: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 09:41:39,180 [Worker-179: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 09:42:06,497 [Worker-180: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 09:42:06,501 [Worker-180: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 09:42:06,502 [Worker-180: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 09:42:06,503 [Worker-180: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 09:42:37,665 [Worker-176: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 09:42:37,670 [Worker-176: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 09:42:37,672 [Worker-176: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 09:42:37,672 [Worker-176: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 09:42:51,590 [Worker-180: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 09:42:51,591 [Worker-180: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 09:42:51,592 [Worker-180: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 09:42:51,593 [Worker-180: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 09:43:49,437 [Worker-181: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 09:43:49,438 [Worker-181: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 09:43:49,439 [Worker-181: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 09:43:49,440 [Worker-181: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 09:45:11,092 [Worker-179: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 09:45:11,094 [Worker-179: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 09:45:11,100 [Worker-179: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 09:45:11,100 [Worker-179: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 09:46:16,570 [Worker-181: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 09:46:16,572 [Worker-181: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 09:46:16,573 [Worker-181: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 09:46:16,574 [Worker-181: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 09:56:15,439 [Worker-182: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 09:56:15,444 [Worker-182: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 09:56:15,449 [Worker-182: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 09:56:15,450 [Worker-182: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 11:01:19,355 [Worker-192: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:01:19,365 [Worker-192: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 11:01:19,367 [Worker-192: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:01:19,368 [Worker-192: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 11:03:39,511 [Worker-193: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:03:39,515 [Worker-193: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 11:03:39,516 [Worker-193: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:03:39,517 [Worker-193: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 11:05:47,901 [Worker-193: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:05:47,905 [Worker-193: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 11:05:47,906 [Worker-193: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:05:47,907 [Worker-193: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 11:08:01,564 [Worker-195: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:08:01,568 [Worker-195: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 11:08:01,569 [Worker-195: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:08:01,570 [Worker-195: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 11:08:33,850 [Worker-192: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:08:33,852 [Worker-192: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 11:08:33,853 [Worker-192: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:08:33,854 [Worker-192: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 11:08:55,323 [Worker-197: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:08:55,327 [Worker-197: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 11:08:55,330 [Worker-197: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:08:55,331 [Worker-197: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 11:09:29,700 [Worker-194: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:09:29,703 [Worker-194: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 11:09:29,708 [Worker-194: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:09:29,709 [Worker-194: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 11:42:58,654 [Worker-201: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:42:58,718 [Worker-201: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 11:42:59,887 [Worker-201: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:42:59,888 [Worker-201: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 11:43:21,756 [Worker-197: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:43:21,759 [Worker-197: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 11:43:21,761 [Worker-197: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:43:21,763 [Worker-197: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 11:44:49,368 [Worker-201: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:44:49,375 [Worker-201: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 11:44:49,386 [Worker-201: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:44:49,399 [Worker-201: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 11:46:25,538 [Worker-201: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:46:25,546 [Worker-201: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 11:46:25,547 [Worker-201: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:46:25,548 [Worker-201: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 11:47:07,405 [Worker-195: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:47:07,410 [Worker-195: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 11:47:07,412 [Worker-195: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:47:07,413 [Worker-195: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 11:47:57,816 [Worker-206: Launching Crawler] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:47:57,821 [Worker-206: Launching Crawler] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 11:47:57,822 [Worker-206: Launching Crawler] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:47:57,822 [Worker-206: Launching Crawler] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 11:48:27,579 [Worker-202: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:48:27,584 [Worker-202: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 11:48:27,588 [Worker-202: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:48:27,589 [Worker-202: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 11:49:24,576 [Worker-202: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:49:24,578 [Worker-202: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 11:49:24,579 [Worker-202: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:49:24,580 [Worker-202: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 11:50:22,431 [Worker-192: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:50:22,438 [Worker-192: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 11:50:22,460 [Worker-192: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:50:22,462 [Worker-192: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 11:50:26,050 [Worker-192: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:50:26,051 [Worker-192: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 11:50:26,053 [Worker-192: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:50:26,056 [Worker-192: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 11:51:57,302 [Worker-199: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:51:57,312 [Worker-199: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 11:51:57,320 [Worker-199: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 11:51:57,321 [Worker-199: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 13:10:18,955 [Worker-213: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 13:10:18,966 [Worker-213: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 13:10:18,968 [Worker-213: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 13:10:18,970 [Worker-213: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 13:12:13,528 [Worker-214: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 13:12:13,535 [Worker-214: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 13:12:13,536 [Worker-214: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 13:12:13,537 [Worker-214: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 13:54:19,819 [Worker-217: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 13:54:19,825 [Worker-217: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 13:54:19,827 [Worker-217: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 13:54:19,828 [Worker-217: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-23 13:54:54,400 [Worker-216: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 13:54:54,403 [Worker-216: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-23 13:54:54,404 [Worker-216: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-23 13:54:54,405 [Worker-216: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-25 09:32:09,807 [Worker-322: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-25 09:32:09,818 [Worker-322: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-25 09:32:09,819 [Worker-322: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-25 09:32:09,820 [Worker-322: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-25 09:34:03,113 [Worker-324: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-25 09:34:03,119 [Worker-324: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-25 09:34:03,122 [Worker-324: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-25 09:34:03,122 [Worker-324: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-25 11:22:39,086 [Worker-335: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-25 11:22:39,093 [Worker-335: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-25 11:22:39,098 [Worker-335: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-25 11:22:39,099 [Worker-335: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-25 11:34:39,874 [Worker-338: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-25 11:34:39,880 [Worker-338: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-25 11:34:39,891 [Worker-338: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-25 11:34:39,894 [Worker-338: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-25 11:35:00,164 [Worker-330: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-25 11:35:00,168 [Worker-330: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-25 11:35:00,169 [Worker-330: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-25 11:35:00,170 [Worker-330: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-25 11:42:04,976 [Worker-335: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-25 11:42:04,983 [Worker-335: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-25 11:42:04,986 [Worker-335: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-25 11:42:04,987 [Worker-335: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-25 11:42:55,266 [Worker-330: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-25 11:42:55,267 [Worker-330: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-25 11:42:55,269 [Worker-330: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-25 11:42:55,269 [Worker-330: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-25 11:44:52,646 [Worker-337: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-25 11:44:52,650 [Worker-337: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-25 11:44:52,657 [Worker-337: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-25 11:44:52,657 [Worker-337: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
+2021-11-25 11:58:17,135 [Worker-346: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Assignment-4:Assignment-4:0.0.1-SNAPSHOT @ /Users/nishant-mac/Classes/ACC/Assignments/Assignment-4/ForSubmission/ForSubmission/SourceCode/Assignment-4/pom.xml.
+2021-11-25 11:58:18,411 [Worker-337: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-25 11:58:18,418 [Worker-337: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2021-11-25 11:58:18,434 [Worker-337: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-25 11:58:18,435 [Worker-337: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Assignments/Assignment-4/ForSubmission/ForSubmission/SourceCode/Assignment-4/src/test/resources
+2021-11-25 12:01:50,183 [Worker-335: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-25 12:01:50,187 [Worker-335: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/main/resources
+2021-11-25 12:01:50,189 [Worker-335: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-11-25 12:01:50,189 [Worker-335: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/src/test/resources
