@@ -48,10 +48,11 @@ public class Crawler {
 	}
 	
 	
-	public static void getUrls() {
-		for(String url : urls) {
+	public static Set<String> getUrls() {
+		/*for(String url : urls) {
 			System.out.println(url);
-		}
+		}*/
+		return urls;
 	}
 	
 	private static boolean isSameDomain(String url, String domainlUrl) {
@@ -87,6 +88,10 @@ public class Crawler {
 		// TODO Auto-generated method stub
 		startCrawling("http://www.javatpoint.com", 0);
 		getUrls();
+		
+		for(var url : getUrls()) {
+			HTMLParser.readURL(url);
+		}
 
 	}
 

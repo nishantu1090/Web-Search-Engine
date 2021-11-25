@@ -11,14 +11,14 @@ import textprocessing.*;
 public class TrieInitializer {
 	
 	private static TrieST<ArrayList<ReferenceCount>> st;
-	
+	private static String DirectoryPath = "/Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/ParsedTextFile";
 	static {
 		st = new TrieST<ArrayList<ReferenceCount>>();
 	}
 	
 	public static void createTrie() {
 		
-		File folder = new File("/Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/Text-Files-Short");
+		File folder = new File(DirectoryPath);
 		File[] listOfFiles = folder.listFiles();
 	    
 		for(int i = 0; i < listOfFiles.length; i++) {
@@ -64,7 +64,7 @@ public class TrieInitializer {
 	}
 	
 	public static String[] getWordsInFile(String fileName) {
-		In in = new In("/Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/Text-Files-Short/" + fileName);
+		In in = new In(DirectoryPath + "/" + fileName);
 		String text = in.readAll();
 		StringTokenizer tokenizer = new StringTokenizer(text);
 		
@@ -102,7 +102,7 @@ public class TrieInitializer {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		TrieInitializer.createTrie();
-		ArrayList<ReferenceCount> refs = TrieInitializer.getReferences("Standards");
+		ArrayList<ReferenceCount> refs = TrieInitializer.getReferences("Java");
 		
 		Collections.sort(refs);
 		System.out.println("Found the word in the following files");

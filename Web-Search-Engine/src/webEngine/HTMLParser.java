@@ -1,4 +1,6 @@
 package webEngine;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import org.jsoup.*;
@@ -9,18 +11,38 @@ import org.jsoup.select.Elements;
 public class HTMLParser {
 	
 	public static void readURL(String url) {
-		
+		String text= "";
 		try {
 			Document doc = Jsoup.connect(url).get();
 			Element body = doc.body();
-		      Elements paragraphs = body.getElementsByTag("p");
-		      for (Element paragraph : paragraphs) {
-		         System.out.println(paragraph.text());
-		      }
+		    Elements paragraphs = body.getElementsByTag("p");
+		    for (Element paragraph : paragraphs) {
+		    	text += paragraph.text() + " ";
+		    }
+		      
+		    writeTextFile(url, text);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public static void writeTextFile(String fileName, String text) {
+		fileName = fileName.split("//")[1];
+		fileName = fileName.replace("/", "_");
+		
+        try {
+        	BufferedWriter  writer = null;
+        	writer = new BufferedWriter( new FileWriter("/Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/ParsedTextFile/"+fileName));
+			writer.write(text);
+			writer.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+        return;
+        
 	}
 	
 	public static void main(String[] args) {
