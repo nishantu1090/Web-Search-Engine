@@ -7,12 +7,16 @@ import org.jsoup.*;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-public class Crawler {
+public class Crawler implements Runnable {
 
 	private static Set<String> urls = new HashSet<String>();
 	private static int maxDepth = 5;
 	private static String regex = "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)";
+	private static String lastCrawledUrl;
 	
+	static {
+		lastCrawledUrl = "http://www.javatpoint.com";
+	}
 	public static void startCrawling(String url, int depth) {
 		Pattern patternObject = Pattern.compile(regex);
 		if(depth < maxDepth) {
@@ -54,6 +58,7 @@ public class Crawler {
 		
 		for(var url : getUrls()) {
 			HTMLParser.readURL(url);
+			lastCrawledUrl = url;
 		}
 		return;
 	}
@@ -88,15 +93,37 @@ public class Crawler {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		startCrawling("http://www.javatpoint.com", 0);
+		//startCrawling("http://www.javatpoint.com", 0);
 		//getUrls();
 		
 		/*for(var url : getUrls()) {
 			HTMLParser.readURL(url);
 		}*/
-		
-		parseURLS();
+		Crawler crawler = new Crawler();
+		Thread crawlerThread = new Thread(crawler);
+		crawlerThread.start();
+		//parseURLS();
 
+	}
+
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		while(true) {
+			System.out.println("Crawling started with url " + lastCrawledUrl);
+			startCrawling(lastCrawledUrl, 0);
+			parseURLS();
+			try {
+				System.out.println("Crawler Thread going to sleep....");
+				Thread.sleep(90000);
+				System.out.println("Crawler Thread woke up! Beginning to crawl...");
+				
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			};
+		}
 	}
 
 }

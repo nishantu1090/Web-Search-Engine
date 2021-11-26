@@ -19,10 +19,17 @@ public class SearchEngine {
 		Crawler.startCrawling("http://www.javatpoint.com", 0);
 		Crawler.parseURLS();
 		System.out.println("## Crawling completed!!");
-		System.out.println("Building Index...");
+		System.out.println("## Building Index...");
 		TrieInitializer.createTrie();
-		
-		System.out.println("Index Built!!!");
+		try {
+			System.out.println("Thread sleeping....");
+			Thread.sleep(100000);
+			TrieInitializer.createTrie();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("## Index Built!!!");
 		
 		
 		do {

@@ -24,6 +24,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="/Users/nishant-mac/Classes/ACC/Project/ACC-Project-V2/Web-Search-Engine/Web-Search-Engine"/>
 			<item value="/Users/nishant-mac/Classes/ACC/Project/Web-Search-Engine/WebSearchEngine_ACC-master"/>
 			<item value="/Users/nishant-mac/Classes/ACC/Assignments/Assignment-4/SourceCode/Assignment-4"/>
 		</list>

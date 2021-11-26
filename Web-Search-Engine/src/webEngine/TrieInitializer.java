@@ -12,6 +12,7 @@ public class TrieInitializer {
 	
 	private static TrieST<ArrayList<ReferenceCount>> st;
 	private static String DirectoryPath = "/Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/ParsedTextFile";
+	
 	static {
 		st = new TrieST<ArrayList<ReferenceCount>>();
 	}
@@ -77,6 +78,8 @@ public class TrieInitializer {
 			words[i++] = tokenizer.nextToken();
 		}
 		
+		File f = new File(DirectoryPath + "/" + fileName);
+		f.delete();
 		return filterWords(words);
 		
 		
