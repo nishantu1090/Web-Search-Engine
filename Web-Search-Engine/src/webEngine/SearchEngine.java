@@ -16,19 +16,14 @@ public class SearchEngine {
 		System.out.println();
 		System.out.println("## Hang Tight! We are building the index####");
 		System.out.println("## Starting to Crawl the web....");
-		Crawler.startCrawling(Crawler.lastCrawledUrl, 0);
-		Crawler.parseURLS();
-		System.out.println("## Crawling completed!!");
-		System.out.println("## Building Index...");
-		TrieInitializer.createTrie();
-		/*try {
-			System.out.println("Thread sleeping....");
-			Thread.sleep(100000);
-			TrieInitializer.createTrie();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
+		Crawler crawler = new Crawler();
+		Thread crawlerThread = new Thread(crawler);
+		crawlerThread.start();
+		TrieInitializer trie = new TrieInitializer();
+		Thread trieThread = new Thread(trie);
+		trieThread.start();
+		
+		
 		System.out.println("## Index Built!!!");
 		
 		

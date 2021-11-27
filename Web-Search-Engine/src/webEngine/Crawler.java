@@ -33,7 +33,7 @@ public class Crawler implements Runnable {
 					urls.add(url);
 					
 					Elements linksInWebPage = doc.select("a[href]");
-					if(linksInWebPage.size() != 0)
+					if(linksInWebPage.size() > 1)
 						for(Element link : linksInWebPage) {
 							
 							if (isValidUrl(link.attr("abs:href")) && patternObject.matcher(link.attr("href")).find()) {
@@ -115,7 +115,8 @@ public class Crawler implements Runnable {
 				"https://www.google.com/search?q=website+with+links",
 				"https://www.google.com/search?q=websites+with+words",
 				"https://www.google.com/search?q=search",
-				"https://www.oxfordlearnersdictionaries.com/us/wordlists/oxford3000-5000"
+				"https://www.oxfordlearnersdictionaries.com/us/wordlists/oxford3000-5000",
+				"https://www.javatpoint.com"
 		};
 		
 		return urls;
@@ -123,12 +124,7 @@ public class Crawler implements Runnable {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		//startCrawling("http://www.javatpoint.com", 0);
-		//getUrls();
 		
-		/*for(var url : getUrls()) {
-			HTMLParser.readURL(url);
-		}*/
 		Crawler crawler = new Crawler();
 		Thread crawlerThread = new Thread(crawler);
 		crawlerThread.start();
@@ -136,14 +132,14 @@ public class Crawler implements Runnable {
 
 	}
 
-
+	
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
 		Random r = new Random();
 		
 		while(true) {
-			System.out.println("Crawling started with url " + lastCrawledUrl);
+			System.out.println("###  Crawling started with url " + lastCrawledUrl+"...");
 			startCrawling(lastCrawledUrl, 0);
 			if(getUrls().size() != 0)
 				parseURLS();

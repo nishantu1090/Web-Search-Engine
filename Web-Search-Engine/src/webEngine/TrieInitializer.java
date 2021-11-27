@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 import textprocessing.*;
 
-public class TrieInitializer {
+public class TrieInitializer implements Runnable {
 	
 	private static TrieST<ArrayList<ReferenceCount>> st;
 	private static String DirectoryPath = "/Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/ParsedTextFile";
@@ -124,19 +124,29 @@ public class TrieInitializer {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		TrieInitializer.createTrie();
-		//ArrayList<ReferenceCount> refs = TrieInitializer.getReferences("Java");
-		
-		/*Collections.sort(refs);
-		System.out.println("Found the word in the following files");
-		for(var item : refs) {
-			System.out.println(item.getReferenceName() + " " + item.Count);
-		}*/
-		
-		TrieInitializer.GetRankedURLs("Java");
+		//TrieInitializer.createTrie();
 		
 		
+		//TrieInitializer.GetRankedURLs("Java");
 		
+		TrieInitializer trie = new TrieInitializer();
+		Thread TrieThread = new Thread(trie);
+		TrieThread.start();
+		
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		while(true) {
+			TrieInitializer.createTrie();
+			try {
+				Thread.sleep(20000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 
 }
