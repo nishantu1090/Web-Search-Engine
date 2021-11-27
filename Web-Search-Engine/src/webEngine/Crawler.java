@@ -139,7 +139,7 @@ public class Crawler implements Runnable {
 		Random r = new Random();
 		
 		while(true) {
-			System.out.println("###  Crawling started with url " + lastCrawledUrl+"...");
+			
 			startCrawling(lastCrawledUrl, 0);
 			if(getUrls().size() != 0)
 				parseURLS();

@@ -10,6 +10,7 @@ import org.jsoup.select.Elements;
 
 public class HTMLParser {
 	private static String DirectoryPath = "/Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/ParsedTextFile";
+	
 	public static void readURL(String url) {
 		String text= "";
 		try {
