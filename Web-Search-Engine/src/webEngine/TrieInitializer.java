@@ -2,6 +2,7 @@ package webEngine;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -132,6 +133,12 @@ public class TrieInitializer implements Runnable {
 		TrieInitializer trie = new TrieInitializer();
 		Thread TrieThread = new Thread(trie);
 		TrieThread.start();
+		Scanner sc = new Scanner(System.in);
+		while(true) {
+			System.out.println("Enter the word to search:");
+			String key = sc.next();
+			TrieInitializer.GetRankedURLs(key);
+		}
 		
 	}
 
