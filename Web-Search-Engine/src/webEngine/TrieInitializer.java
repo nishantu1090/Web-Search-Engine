@@ -26,8 +26,6 @@ public class TrieInitializer implements Runnable {
 		for(int i = 0; i < listOfFiles.length; i++) {
 			
 			String fileName = listOfFiles[i].getName();
-			//System.out.println(fileName);
-			
 			
 			String[] words = getWordsInFile(fileName);
 			
@@ -125,10 +123,6 @@ public class TrieInitializer implements Runnable {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		//TrieInitializer.createTrie();
-		
-		
-		//TrieInitializer.GetRankedURLs("Java");
 		
 		TrieInitializer trie = new TrieInitializer();
 		Thread TrieThread = new Thread(trie);

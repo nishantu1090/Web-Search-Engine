@@ -128,7 +128,7 @@ public class Crawler implements Runnable {
 		Crawler crawler = new Crawler();
 		Thread crawlerThread = new Thread(crawler);
 		crawlerThread.start();
-		//parseURLS();
+		
 
 	}
 
@@ -148,9 +148,9 @@ public class Crawler implements Runnable {
 				startCrawling(webUrlsToCrawl[i], 0);
 			}
 			try {
-				//System.out.println("Crawler Thread going to sleep....");
+				
 				Thread.sleep(2000);
-				//System.out.println("Crawler Thread woke up! Beginning to crawl...");
+				
 				
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
