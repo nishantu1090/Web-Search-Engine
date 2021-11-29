@@ -123,7 +123,9 @@ public class TrieInitializer implements Runnable {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+		Crawler crawler = new Crawler();
+		Thread crawlerThread = new Thread(crawler);
+		crawlerThread.start();
 		TrieInitializer trie = new TrieInitializer();
 		Thread TrieThread = new Thread(trie);
 		TrieThread.start();

@@ -158,99 +158,6 @@ public class TrieST<Value> {
     }
 
     /**
-     * Returns all keys in the symbol table as an <tt>Iterable</tt>.
-     * To iterate over all of the keys in the symbol table named <tt>st</tt>,
-     * use the foreach notation: <tt>for (Key key : st.keys())</tt>.
-     * @return all keys in the sybol table as an <tt>Iterable</tt>
-     */
-    public Iterable<String> keys() {
-        return keysWithPrefix("");
-    }
-
-    /**
-     * Returns all of the keys in the set that start with <tt>prefix</tt>.
-     * @param prefix the prefix
-     * @return all of the keys in the set that start with <tt>prefix</tt>,
-     *     as an iterable
-     */
-    public Iterable<String> keysWithPrefix(String prefix) {
-        Queue<String> results = new Queue<String>();
-        Node x = get(root, prefix, 0);
-        collect(x, new StringBuilder(prefix), results);
-        return results;
-    }
-
-    private void collect(Node x, StringBuilder prefix, Queue<String> results) {
-        if (x == null) return;
-        if (x.val != null) results.enqueue(prefix.toString());
-        for (char c = 0; c < R; c++) {
-            prefix.append(c);
-            collect(x.next[c], prefix, results);
-            prefix.deleteCharAt(prefix.length() - 1);
-        }
-    }
-
-    /**
-     * Returns all of the keys in the symbol table that match <tt>pattern</tt>,
-     * where . symbol is treated as a wildcard character.
-     * @param pattern the pattern
-     * @return all of the keys in the symbol table that match <tt>pattern</tt>,
-     *     as an iterable, where . is treated as a wildcard character.
-     */
-    public Iterable<String> keysThatMatch(String pattern) {
-        Queue<String> results = new Queue<String>();
-        collect(root, new StringBuilder(), pattern, results);
-        return results;
-    }
-
-    private void collect(Node x, StringBuilder prefix, String pattern, Queue<String> results) {
-        if (x == null) return;
-        int d = prefix.length();
-        if (d == pattern.length() && x.val != null)
-            results.enqueue(prefix.toString());
-        if (d == pattern.length())
-            return;
-        char c = pattern.charAt(d);
-        if (c == '.') {
-            for (char ch = 0; ch < R; ch++) {
-                prefix.append(ch);
-                collect(x.next[ch], prefix, pattern, results);
-                prefix.deleteCharAt(prefix.length() - 1);
-            }
-        }
-        else {
-            prefix.append(c);
-            collect(x.next[c], prefix, pattern, results);
-            prefix.deleteCharAt(prefix.length() - 1);
-        }
-    }
-
-    /**
-     * Returns the string in the symbol table that is the longest prefix of <tt>query</tt>,
-     * or <tt>null</tt>, if no such string.
-     * @param query the query string
-     * @throws NullPointerException if <tt>query</tt> is <tt>null</tt>
-     * @return the string in the symbol table that is the longest prefix of <tt>query</tt>,
-     *     or <tt>null</tt> if no such string
-     */
-    public String longestPrefixOf(String query) {
-        int length = longestPrefixOf(root, query, 0, 0);
-        return query.substring(0, length);
-    }
-
-    // returns the length of the longest string key in the subtrie
-    // rooted at x that is a prefix of the query string,
-    // assuming the first d character match and we have already
-    // found a prefix match of length length
-    private int longestPrefixOf(Node x, String query, int d, int length) {
-        if (x == null) return length;
-        if (x.val != null) length = d;
-        if (d == query.length()) return length;
-        char c = query.charAt(d);
-        return longestPrefixOf(x.next[c], query, d+1, length);
-    }
-
-    /**
      * Removes the key from the set if the key is present.
      * @param key the key
      * @throws NullPointerException if <tt>key</tt> is <tt>null</tt>
@@ -294,26 +201,7 @@ public class TrieST<Value> {
             st.put(keys[i],refs);
         }
 
-        // print results
-        if (st.size() < 100) {
-            StdOut.println("keys(\"\"):");
-            for (String key : st.keys()) {
-                StdOut.println(key + " " + st.get(key));
-            }
-            StdOut.println();
-        }
+       
 
-        StdOut.println("longestPrefixOf(\"shellsort\"):");
-        StdOut.println(st.longestPrefixOf("shellsort"));
-        StdOut.println();
-
-        StdOut.println("keysWithPrefix(\"shor\"):");
-        for (String s : st.keysWithPrefix("shor"))
-            StdOut.println(s);
-        StdOut.println();
-
-        StdOut.println("keysThatMatch(\"sea\"):");
-        for (String s : st.keysThatMatch("sea"))
-            StdOut.println(s);
     }
 }

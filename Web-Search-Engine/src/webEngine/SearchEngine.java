@@ -39,6 +39,8 @@ public class SearchEngine {
 					break;
 				case 2: shouldExit = true;
 					break;
+				default: System.out.println("Enter valid choice!");
+					break;
 			}
 			
 		}while(shouldExit == false);
