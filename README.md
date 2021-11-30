@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # Web-Search-Engine
 
@@ -10,3 +11,7 @@ Please give the path of the directory where you want to have the HTML Parser wri
 
 
 
+=======
+# Web-Search-Engine
+Please clone the WebSearchEngine branch
+>>>>>>> d9a3d38 (Update README.md)
