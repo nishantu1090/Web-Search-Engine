@@ -1,0 +1,17 @@
+package webEngine;
+import org.jsoup.*;
+public class Crawler {
+
+	public static void startCrawling(String url) {
+		
+		
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

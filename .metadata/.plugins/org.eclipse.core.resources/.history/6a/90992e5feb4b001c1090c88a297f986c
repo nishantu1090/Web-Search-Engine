@@ -1,0 +1,113 @@
+import textprocessing.BoyerMoore;
+import textprocessing.BruteForceMatch;
+import textprocessing.In;
+import textprocessing.KMP;
+import java.time.*;
+public class Solution01b {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String[] patterns = {"hard", "disk", "hard disk", "hard drive", "hard dist", "xltpru"};
+		// TODO Auto-generated method stub
+		float sumOfTimeBruteForce = 0;
+		float sumOfTimeBooyerMoore = 0;
+		float sumOfTimeKMP = 0;
+		float duration = 0;
+		for(int i = 0; i < patterns.length; i++) {
+			
+			for(int j = 1; j <= 100; j++) {
+			
+				Instant start = Instant.now();
+				searchUsingBruteForce(patterns[i]);
+				Instant end = Instant.now();
+				duration = Duration.between(start, end).toNanos();
+				sumOfTimeBruteForce += duration;
+				
+				start = Instant.now();
+				searchUsingBoyerMoore(patterns[i]);
+				end = Instant.now();
+				duration = Duration.between(start, end).toNanos();
+				sumOfTimeBooyerMoore += duration;
+				
+				start = Instant.now();
+				searchUsingKMP(patterns[i]);
+				end = Instant.now();
+				duration = Duration.between(start, end).toNanos();
+				sumOfTimeKMP += duration;
+			}
+		}
+		
+		System.out.println("The average time taken(in ns) to do the searches in Bruter Force is: " + sumOfTimeBruteForce/600);
+		System.out.println("The average time taken(in ns) to do the searches in Booyer Moore is: " + sumOfTimeBooyerMoore/600);
+		System.out.println("The average time taken(in ns) to do the searches in KMP is: " + sumOfTimeKMP/600);
+		
+	}
+	public static void searchUsingBruteForce(String pattern) {
+		In in = new In("/Users/nishant-mac/Classes/ACC/Assignments/Assignment-4/HardDisk2.txt");
+		
+		String text = in.readAll();
+		
+		
+		int n = text.length();
+		
+		int offset = 0;
+		
+		int i = 1;
+		int startIndex = 0;
+		do{
+			 offset = BruteForceMatch.search1(startIndex, pattern, text);
+			 if(offset == text.length())
+				 break;
+			 
+			 
+			 startIndex = offset + pattern.length();
+			
+			 i++;
+		}while(offset != n);
+	}
+	
+	public static void searchUsingBoyerMoore(String pattern) {
+		
+		BoyerMoore boyer = new BoyerMoore(pattern);
+		In in = new In("/Users/nishant-mac/Classes/ACC/Assignments/Assignment-4/HardDisk2.txt");
+		
+		String text = in.readAll();
+		
+		int i = 1;
+		int startIndex = 0;
+		int offset = 0;
+		
+		do {
+			offset = boyer.search(startIndex, text);
+			if(offset == text.length())
+				break;
+			
+			startIndex = offset + pattern.length();
+			i++;
+		}while(true);
+		
+	}
+	
+	public static void searchUsingKMP(String pattern) {
+		
+		KMP kmp = new KMP(pattern);
+		In in = new In("/Users/nishant-mac/Classes/ACC/Assignments/Assignment-4/HardDisk2.txt");
+		
+		String text = in.readAll();
+		
+		int i = 1;
+		int startIndex = 0;
+		int offset = 0;
+		
+		do {
+			offset = kmp.search(startIndex, text);
+			if(offset == text.length())
+				break;
+			
+			startIndex = offset + pattern.length();
+			i++;
+		}while(true);
+	}
+
+
+}

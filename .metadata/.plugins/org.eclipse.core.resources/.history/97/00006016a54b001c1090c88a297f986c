@@ -1,0 +1,6 @@
+package webEngine;
+
+public class ReferenceCount {
+	public String Reference;
+	public int Count;
+}

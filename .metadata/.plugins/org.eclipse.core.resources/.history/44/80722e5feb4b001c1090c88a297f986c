@@ -1,0 +1,85 @@
+import textprocessing.*;
+
+public class Solution01 {
+
+	
+	public static void main(String[] args) {
+		
+		String[] patterns = {"hard", "disk", "hard disk", "hard drive", "hard dist", "xltpru"};
+		// TODO Auto-generated method stub
+		
+		for(int i = 0; i < patterns.length; i++) {
+			searchUsingBruteForce(patterns[i]);
+			searchUsingBoyerMoore(patterns[i]);
+			searchUsingKMP(patterns[i]);
+		}
+	}
+	
+	public static void searchUsingBruteForce(String pattern) {
+		In in = new In("/Users/nishant-mac/Classes/ACC/Assignments/Assignment-4/HardDisk2.txt");
+		System.out.println("Searching using brute force, the pattern is: " + pattern);
+		String text = in.readAll();
+		
+		
+		int n = text.length();
+		
+		int offset = 0;
+		
+		int i = 1;
+		int startIndex = 0;
+		do{
+			 offset = BruteForceMatch.search1(startIndex, pattern, text);
+			 if(offset == text.length())
+				 break;
+			 System.out.println("Occurence no: "+i + " is at offset:" + offset);
+			 
+			 startIndex = offset + pattern.length();
+			
+			 i++;
+		}while(offset != n);
+	}
+	
+	public static void searchUsingBoyerMoore(String pattern) {
+		System.out.println("Searching using boyer moore, the pattern is: " + pattern);
+		BoyerMoore boyer = new BoyerMoore(pattern);
+		In in = new In("/Users/nishant-mac/Classes/ACC/Assignments/Assignment-4/HardDisk2.txt");
+		
+		String text = in.readAll();
+		
+		int i = 1;
+		int startIndex = 0;
+		int offset = 0;
+		
+		do {
+			offset = boyer.search(startIndex, text);
+			if(offset == text.length())
+				break;
+			System.out.println("Occurrence no: "+ i + " is at offset: " + offset);
+			startIndex = offset + pattern.length();
+			i++;
+		}while(true);
+		
+	}
+	
+	public static void searchUsingKMP(String pattern) {
+		System.out.println("Searching using KMP, the pattern is: " + pattern);
+		KMP kmp = new KMP(pattern);
+		In in = new In("/Users/nishant-mac/Classes/ACC/Assignments/Assignment-4/HardDisk2.txt");
+		
+		String text = in.readAll();
+		
+		int i = 1;
+		int startIndex = 0;
+		int offset = 0;
+		
+		do {
+			offset = kmp.search(startIndex, text);
+			if(offset == text.length())
+				break;
+			System.out.println("Occurrence no: "+ i + " is at offset: " + offset);
+			startIndex = offset + pattern.length();
+			i++;
+		}while(true);
+	}
+
+}

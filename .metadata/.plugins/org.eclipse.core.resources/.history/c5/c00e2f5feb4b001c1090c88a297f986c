@@ -1,0 +1,40 @@
+import java.util.StringTokenizer;
+
+import textprocessing.In;
+import textprocessing.TST;
+
+public class Solution02 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		In in = new In("/Users/nishant-mac/Classes/ACC/Assignments/Assignment-4/Protein.txt");
+		String text = in.readAll();
+		
+		StringTokenizer tokenizer = new StringTokenizer(text);
+		String[] words = new String[tokenizer.countTokens()];
+		int i = 0;
+		while(tokenizer.hasMoreTokens()) {
+			words[i++] = tokenizer.nextToken();
+			
+		}
+		
+		
+		
+		
+		TST<Integer> st = new TST<Integer>();
+
+        for (int j = 0; j < words.length; j++) {
+
+            st.put(words[j], j);
+        }
+        
+        String[] keys = {"protein", "complex", "PPI", "prediction"};
+        
+        for(int j = 0; j < keys.length; j++) {
+        	System.out.println(keys[j] + " is the word no:"+st.get(keys[j])+" in protein.txt file");
+        }
+	}
+        
+}
+
+
