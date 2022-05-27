@@ -10,6 +10,9 @@ Change the Directory Path at these locations:
 
 Please give the path of the directory where you want to have the HTML Parser write the text files.
 
+## Brief Workflow
+![Blank diagram (1)](https://user-images.githubusercontent.com/26408013/170794517-c189a305-dab5-456a-803d-71729d7c8f42.png)
+
 ## Demo Video
 https://www.youtube.com/watch?v=Ql2AHAWXo_E
 
