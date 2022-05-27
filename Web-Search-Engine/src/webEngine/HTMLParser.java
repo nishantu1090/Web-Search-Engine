@@ -9,9 +9,9 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class HTMLParser {
-	private static String DirectoryPath = "/Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/ParsedTextFile";
 	
-	public static void readURL(String url) {
+	
+	public static void parseHTML(String url) {
 		String text= "";
 		try {
 			Document doc = Jsoup.connect(url).get();
@@ -21,7 +21,7 @@ public class HTMLParser {
 		    	text += paragraph.text() + " ";
 		    }
 		      
-		    writeTextFile(url, text);
+		    TextFileWriter.writeTextFile(url, text);
 		    return;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -29,27 +29,11 @@ public class HTMLParser {
 		}
 	}
 	
-	public static void writeTextFile(String fileName, String text) {
-		fileName = fileName.split("//")[1];
-		fileName = fileName.replace("/", "_");
-		
-        try {
-        	BufferedWriter  writer = null;
-        	writer = new BufferedWriter( new FileWriter(DirectoryPath + "/"+fileName));
-			writer.write(text);
-			writer.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-        
-        return;
-        
-	}
+	
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		readURL("http://www.javatpoint.com");
+		parseHTML("http://www.javatpoint.com");
 	}
 
 }

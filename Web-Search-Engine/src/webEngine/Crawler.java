@@ -42,7 +42,7 @@ public class Crawler implements Runnable {
 								if(!isSameDomain(link.attr("abs:href"), url))
 								{
 									float timeElapsed = Duration.between(startTime, Instant.now()).toMillis();
-									if(timeElapsed > 30000)
+									if(timeElapsed > 5000)
 										return;
 									else
 										startCrawling(link.attr("abs:href"), ++depth);
@@ -60,7 +60,10 @@ public class Crawler implements Runnable {
 				}
 			} catch (IOException e) { 
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				
+				Random r = new Random();
+				int i = r.nextInt(webUrlsToCrawl.length);
+				startCrawling(webUrlsToCrawl[i], ++ depth);
 			}
 		}
 		
@@ -76,7 +79,7 @@ public class Crawler implements Runnable {
 	public static void parseURLS() {
 		
 		for(var url : getUrls()) {
-			HTMLParser.readURL(url);
+			HTMLParser.parseHTML(url);
 			lastCrawledUrl = url;
 		}
 		return;

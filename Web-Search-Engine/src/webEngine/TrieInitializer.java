@@ -12,7 +12,7 @@ import textprocessing.*;
 public class TrieInitializer implements Runnable {
 	
 	private static TrieST<ArrayList<ReferenceCount>> st;
-	private static String DirectoryPath = "/Users/nishant-mac/Classes/ACC/Project/ACC-Project/Web-Search-Engine/ParsedTextFile";
+	private static String DirectoryPath = "/Users/nishantupadhyay/GitHubProjects/SearchEngine/Files/ParsedTextFile";
 	
 	static {
 		st = new TrieST<ArrayList<ReferenceCount>>();
