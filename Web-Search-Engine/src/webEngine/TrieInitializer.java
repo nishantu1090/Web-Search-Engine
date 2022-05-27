@@ -23,6 +23,7 @@ public class TrieInitializer implements Runnable {
 		File folder = new File(DirectoryPath);
 		File[] listOfFiles = folder.listFiles();
 	    
+		//looping through all the files to fetch words
 		for(int i = 0; i < listOfFiles.length; i++) {
 			
 			String fileName = listOfFiles[i].getName();
@@ -31,34 +32,29 @@ public class TrieInitializer implements Runnable {
 			
 			fileName = fileName.replace("_", "/");
 			
+			//looping through all the words
 			for(var word : words) {
 				
 				if(word != "" && word != null) {
 					if(st.get(word) == null) {
-						ArrayList<ReferenceCount> newRef = new ArrayList<ReferenceCount>();
-						newRef.add(new ReferenceCount(fileName, 1));
-						st.put(word, newRef);
+						
+						ArrayList<ReferenceCount> newWebsiteRef = new ArrayList<ReferenceCount>();
+						newWebsiteRef.add(new ReferenceCount(fileName, 1));
+						st.put(word, newWebsiteRef);
 					}
 					else {//increasing the reference count
+						
 						ArrayList<ReferenceCount> refs = st.get(word);
-						int isFound = 0;
+						
 						for(int k = 0; k < refs.size(); k++) {
 							
 							if(refs.get(k).getReferenceName().equals(fileName)) {
 								refs.get(k).setReferenceCount(refs.get(k).getCount() + 1);
-								isFound = 1;
+								
 								break;
 							}
 						}
-						
-						if(isFound == 0) {
-							ArrayList<ReferenceCount> referencedPages = st.get(word);
-							referencedPages.add(new ReferenceCount(fileName,1));
-							st.put(word, referencedPages);
-						}
-						
 					}
-						
 				}
 			}
 		}		
@@ -104,7 +100,7 @@ public class TrieInitializer implements Runnable {
 		return st.get(key);
 	}
 	
-	public static void GetRankedURLs(String key) {
+	public static void PrintRankedURLs(String key) {
 		ArrayList<ReferenceCount> refs = TrieInitializer.getReferences(key);
 		
 		if(refs != null) {
@@ -133,7 +129,7 @@ public class TrieInitializer implements Runnable {
 		while(true) {
 			System.out.println("Enter the word to search:");
 			String key = sc.next();
-			TrieInitializer.GetRankedURLs(key);
+			TrieInitializer.PrintRankedURLs(key);
 		}
 		
 	}

@@ -34,7 +34,7 @@ public class SearchEngine {
 			switch(ch){
 				case 1: System.out.println("Enter the word you wish to search");
 						String key = sc.next();
-						TrieInitializer.GetRankedURLs(key);
+						TrieInitializer.PrintRankedURLs(key);
 						System.out.println();
 					break;
 				case 2: shouldExit = true;

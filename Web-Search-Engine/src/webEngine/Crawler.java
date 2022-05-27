@@ -24,6 +24,7 @@ public class Crawler implements Runnable {
 		lastCrawledUrl = webUrlsToCrawl[3];
 	}
 	public static void startCrawling(String url, int depth) {
+		
 		Pattern patternObject = Pattern.compile(regex);
 		if(depth < maxDepth) {
 			
@@ -55,13 +56,11 @@ public class Crawler implements Runnable {
 						Random r = new Random();
 						int i = r.nextInt(webUrlsToCrawl.length);
 						startCrawling(webUrlsToCrawl[i], ++ depth);
-						
 					}
-						
 				}
 			} catch (IOException e) { 
 				// TODO Auto-generated catch block
-				
+				e.printStackTrace();
 			}
 		}
 		
@@ -97,8 +96,7 @@ public class Crawler implements Runnable {
 		if (urls.contains(url)) {
 			return false;
 		}
-		
-		
+				
 		if (url.endsWith(".jpeg") || url.endsWith(".jpg") || url.endsWith(".png")
 				|| url.endsWith(".pdf") || url.contains("#") 
 				|| url.contains("mailto:") || url.startsWith("javascript:") || url.endsWith(".gif")
@@ -128,8 +126,6 @@ public class Crawler implements Runnable {
 		Crawler crawler = new Crawler();
 		Thread crawlerThread = new Thread(crawler);
 		crawlerThread.start();
-		
-
 	}
 
 	
@@ -141,6 +137,7 @@ public class Crawler implements Runnable {
 		while(true) {
 			
 			startCrawling(lastCrawledUrl, 0);
+	
 			if(getUrls().size() != 0)
 				parseURLS();
 			else {
@@ -150,8 +147,7 @@ public class Crawler implements Runnable {
 			try {
 				
 				Thread.sleep(2000);
-				
-				
+					
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
