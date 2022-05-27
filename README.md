@@ -8,8 +8,6 @@ Change the Directory Path at these locations:
 
 Please give the path of the directory where you want to have the HTML Parser write the text files.
 
-## Application demo video
-https://www.youtube.com/watch?v=Ql2AHAWXo_E
 
 
 
