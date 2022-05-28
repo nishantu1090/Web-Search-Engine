@@ -10,9 +10,7 @@ public class TextFileWriter {
 	public static void writeTextFile(String fileName, String text) {
 		fileName = fileName.split("//")[1];
 		fileName = fileName.replace("/", "_");
-	
-		
-        try {
+	    try {
         	BufferedWriter  writer = null;
         	writer = new BufferedWriter( new FileWriter(DirectoryPath + "/"+fileName));
 			writer.write(text);
@@ -21,8 +19,6 @@ public class TextFileWriter {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        
         return;
-        
-	}
+    }
 }

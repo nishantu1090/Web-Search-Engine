@@ -5,7 +5,6 @@ public class ReferenceCount implements Comparable {
 	public int Count;
 	
 	ReferenceCount(String ref, int count){
-		
 		this.Reference = ref;
 		this.Count = count;
 	}
@@ -26,7 +25,6 @@ public class ReferenceCount implements Comparable {
 	public int compareTo(Object o) {
 		// TODO Auto-generated method stub
 		ReferenceCount c = (ReferenceCount)o;
-		
 		return  c.Count - this.Count;
 	}
 }

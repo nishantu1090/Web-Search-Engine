@@ -9,8 +9,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class HTMLParser {
-	
-	
+		
 	public static void parseHTML(String url) {
 		String text= "";
 		try {
@@ -25,12 +24,9 @@ public class HTMLParser {
 		    return;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			
 		}
 	}
-	
-	
-	
+		
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		parseHTML("http://www.javatpoint.com");
